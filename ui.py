@@ -28,4 +28,4 @@ demo = gr.ChatInterface(
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="10.0.2.88")
+    demo.launch()
