@@ -6,11 +6,9 @@ import time
 from datetime import datetime
 
 from langchain.agents import AgentExecutor, create_react_agent, create_openai_tools_agent
-from langchain_openai import OpenAI
 from langchain.agents import tool
 from langchain.prompts import PromptTemplate
 from langchain.globals import set_debug
-#from langchain_community.llms import Ollama
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools.wikidata.tool import WikidataAPIWrapper, WikidataQueryRun
 
@@ -18,8 +16,8 @@ from wikibaseintegrator import wbi_helpers
 from wikibaseintegrator.wbi_config import config as wbi_config
 
 
-#WB_LANGUAGE = 'en'
-WB_LANGUAGE = 'pt-br'
+WB_LANGUAGE = 'en'
+#WB_LANGUAGE = 'pt-br'
 WB_LIMIT = 200
 WB_USER_AGENT = 'MyWikibaseBot/1.0'
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
@@ -143,15 +141,7 @@ def load_prompt_file(full_path):
 
 def answer_the_question(question):
 
-  if 'OPENAI_API_URL' in os.environ:
-      llm = OpenAI(openai_api_base=os.environ['OPENAI_API_URL'],
-            openai_api_key="dummy",
-            temperature=0,
-            top_p=0,
-            max_tokens=1024,
-            model_kwargs={"seed": 42})
-  else:
-      llm = ChatGoogleGenerativeAI(model="gemini-pro")
+  llm = ChatGoogleGenerativeAI(model="gemini-pro")
 
   tools = [getQItem, getProperty, checkSparql, runSparql, WikidataRetrieval]
   prompt = load_prompt_file('prompts/gemini.prompt')
