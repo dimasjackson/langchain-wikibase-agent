@@ -1,8 +1,9 @@
 # Wikidata Chat
 ## Usage
-* Create a python virtual env and install the requirements.txt packages.
+* Create a python virtual env and install the `requirements.txt` packages.
+* Move the `template.env` file to `.env`
 * Set your GOOGLE_APY_KEY as env variable in `.env` file.
-* Run the ui.py file
+* Run the `ui.py` file
 * The Wikidata Chat must be running on http://localhost:7861
 
 ![Captura de tela 2024-06-27 094505](https://github.com/dimasjackson/langchain-wikibase-agent/assets/114688989/c6ba6f47-cd42-492e-b8af-e39fcbb7ace3)
