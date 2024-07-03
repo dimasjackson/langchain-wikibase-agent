@@ -163,8 +163,8 @@ def answer_the_question(question):
 
   agent_executor = AgentExecutor(
           agent=agent,
-          tools=tools, 
-          verbose=True, 
+          tools=tools,
+          verbose=True,
           handle_parsing_errors=True,
           early_stop_method='generate',
           return_intermediate_steps=False,
@@ -175,4 +175,3 @@ def answer_the_question(question):
 
   result = agent_executor.invoke({"input": f"{question}"})
   return result
-
