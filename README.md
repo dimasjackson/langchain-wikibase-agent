@@ -1,4 +1,7 @@
 # Wikidata Chat
+
+This repository is an chat bot app powered by Generative AI that is based on a Langchain Reasoning-Acting (ReAct) Agent. This autonomous agent can execute python code to retrieve information from Wikidata API or any local instance of Wikibase Knowledge Graph API. Moreover, the agent is able to generate SPARQL queries and run in the Wikibase SPARQL endpoint, fed by Blazegraph database. The technique used to generate answers is a Retrieval Augmented Generation (RAG) based on Knowledge Graphs instead of vector databases.
+
 ## Usage
 * Create a python virtual env and install the `requirements.txt` packages.
 * Move the `template.env` file to `.env`
